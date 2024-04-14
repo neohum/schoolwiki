@@ -86,8 +86,8 @@ return [
     // Default locale to use
     // A default variant is also stored since Laravel can overwrite
     // app.locale when dynamically setting the locale in-app.
-    'locale' => env('APP_LANG', 'en'),
-    'default_locale' => env('APP_LANG', 'en'),
+    'locale' => env('APP_LANG', 'ko'),
+    'default_locale' => env('APP_LANG', 'ko'),
 
     //  Application Fallback Locale
     'fallback_locale' => 'en',
