@@ -100,7 +100,7 @@
                 </a>
             @endif
             @if(userCan('chapter-create', $book))
-                <a href="{{ $book->getUrl('/create-chapter') }}" data-shortcut="new" class="icon-list-item">
+                <a href="{{ $book->getUrl('/create-chapter') }}" data-shortcut="new" class="icon-list-item" style="color:brown">
                     <span>@icon('add')</span>
                     <span>{{ trans('entities.chapters_new') }}</span>
                 </a>
@@ -125,7 +125,7 @@
                 </a>
             @endif
             @if(userCan('restrictions-manage', $book))
-                <a href="{{ $book->getUrl('/permissions') }}" data-shortcut="permissions" class="icon-list-item">
+                <a href="{{ $book->getUrl('/permissions') }}" data-shortcut="permissions" class="icon-list-item" style="color:red">
                     <span>@icon('lock')</span>
                     <span>{{ trans('entities.permissions') }}</span>
                 </a>

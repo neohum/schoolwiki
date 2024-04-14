@@ -37,12 +37,12 @@
                     <p class="text-muted italic mb-m mt-xl">{{ trans('entities.chapters_empty') }}</p>
 
                     <div class="icon-list block inline">
-                        @if(userCan('page-create', $chapter))
+                        {{-- @if(userCan('page-create', $chapter))
                             <a href="{{ $chapter->getUrl('/create-page') }}" class="icon-list-item text-page">
                                 <span class="icon">@icon('page')</span>
                                 <span>{{ trans('entities.books_empty_create_page') }}</span>
                             </a>
-                        @endif
+                        @endif --}}
                         @if(userCan('book-update', $book))
                             <a href="{{ $book->getUrl('/sort') }}" class="icon-list-item text-book">
                                 <span class="icon">@icon('book')</span>
@@ -72,12 +72,12 @@
             @if($book->hasPermissions())
                 <div class="active-restriction">
                     @if(userCan('restrictions-manage', $book))
-                        <a href="{{ $book->getUrl('/permissions') }}" class="entity-meta-item">
+                        <a href="{{ $book->getUrl('/permissions') }}" class="entity-meta-item" style="color: red">
                             @icon('lock')
                             <div>{{ trans('entities.books_permissions_active') }}</div>
                         </a>
                     @else
-                        <div class="entity-meta-item">
+                        <div class="entity-meta-item" style="color: red">
                             @icon('lock')
                             <div>{{ trans('entities.books_permissions_active') }}</div>
                         </div>
@@ -88,7 +88,7 @@
             @if($chapter->hasPermissions())
                 <div class="active-restriction">
                     @if(userCan('restrictions-manage', $chapter))
-                        <a href="{{ $chapter->getUrl('/permissions') }}" class="entity-meta-item">
+                        <a href="{{ $chapter->getUrl('/permissions') }}" class="entity-meta-item" style="color: red">
                             @icon('lock')
                             <div>{{ trans('entities.chapters_permissions_active') }}</div>
                         </a>
@@ -135,7 +135,7 @@
                 </a>
             @endif
             @if(userCan('restrictions-manage', $chapter))
-                <a href="{{ $chapter->getUrl('/permissions') }}" data-shortcut="permissions" class="icon-list-item">
+                <a href="{{ $chapter->getUrl('/permissions') }}" data-shortcut="permissions" class="icon-list-item" style="color: red">
                     <span>@icon('lock')</span>
                     <span>{{ trans('entities.permissions') }}</span>
                 </a>
