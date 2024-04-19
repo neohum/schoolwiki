@@ -1,0 +1,39 @@
+{
+    "name": "ssddanbrown/asserthtml",
+    "description": "HTML Content Assertions for PHPUnit",
+	"homepage": "https://github.com/ssddanbrown/asserthtml",
+	"license": "MIT",
+	"type": "library",
+	"authors": [
+        {
+            "name": "Dan Brown",
+            "homepage": "https://danb.me",
+			"role": "Developer"
+        }
+    ],
+    "require": {
+		"php": ">=8.1",
+		"ext-json": "*",
+		"ext-dom": "*",
+		"phpunit/phpunit": "^10.0",
+		"symfony/css-selector": "^6.0",
+		"symfony/dom-crawler": "^6.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10"
+    },
+	"autoload": {
+		"psr-4": {
+			"Ssddanbrown\\AssertHtml\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Ssddanbrown\\AssertHtml\\Tests\\": "tests"
+		}
+	},
+	"scripts": {
+		"test": "vendor/bin/phpunit",
+		"test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+	}
+}
